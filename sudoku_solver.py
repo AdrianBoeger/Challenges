@@ -71,27 +71,7 @@ def solve(matrix):
                     # clear possible solution for this field
                     possible_solution.clear()
 
-        for box in possible_solutions_matrix_dict:
-            for position, possibility in possible_solutions_matrix_dict[box].items():
-                # identify and clean len = 1 possibilities (valid solutions) from dict and clean the possibility from
-                # other positions within the same 3by3 matrix
-                if len(possibility) == 1:
-                    remove_value = possibility[0]
-                    remove_positions.update({box: position})
-                    for value in possible_solutions_matrix_dict[box].values():
-                        try:
-                            value.remove(remove_value)
-                        except ValueError:
-                            pass
-
-        for box in possible_solutions_matrix_dict:
-            for to_remove_position in remove_positions.values():
-                try:
-                    possible_solutions_matrix_dict[box].pop(to_remove_position)
-                except KeyError:
-                    pass
-
-        # check for non duplicates within a 3by3 and set
+        # check for non duplicates within a possible_solutions dictionary and fill solutions
         non_duplicates(matrix, possible_solutions_matrix_dict)
         non_duplicates(matrix, possible_solutions_horizontal)
         non_duplicates(matrix, possible_solutions_vertical)
@@ -105,6 +85,7 @@ def solve(matrix):
             print(g + ':' + str(possible_solutions_vertical[g]))
 
         run += 1
+        # Terminate while loop when no more changes to the matrix occur. Sudoku is solved or the algorithms are to weak.
         if matrix == previous_matrix:
             break
 
@@ -117,6 +98,7 @@ def create_3by3(matrix, i, j):
     return square_3by3
 
 
+# Function to search for non duplicates within a possible_solutions dictionary and update the according position in the matrix
 def non_duplicates(matrix, dictionary):
     # identify and clean len = 1 possibilities (valid solutions) from dict and clean the possibility from
     # other positions within the same dict of dict
