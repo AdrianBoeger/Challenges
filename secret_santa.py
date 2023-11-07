@@ -3,7 +3,7 @@
 
 import random
 
-players = ['Eugen', 'Detta', 'Klaus', 'Margit', 'Daria', 'Jonathan', 'Adrian']
+players = ['Anton', 'Berta', 'Caesar', 'Dora', 'Emil', 'Friedrich', 'Gustav']
 
 recipients = []
 
