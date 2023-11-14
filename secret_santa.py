@@ -1,5 +1,4 @@
 # Write a Python script to assign Secret Santa pairs for a group of participants.
-# The script should ensure that no participant is assigned to themselves, and no one is assigned to the same person they had last year.
 
 import random
 
