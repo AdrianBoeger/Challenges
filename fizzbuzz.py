@@ -4,11 +4,11 @@
 import math
 
 for number in range(1, 101):
-    if math.remainder(number, 3) == 0.0 and math.remainder(number, 5) == 0.0:
+    if math.remainder(number, 3) == 0 and math.remainder(number, 5) == 0:
         print('FizzBuzz')
-    elif math.remainder(number, 3) == 0.0:
+    elif math.remainder(number, 3) == 0:
         print('Fizz')
-    elif math.remainder(number, 5) == 0.0:
+    elif math.remainder(number, 5) == 0:
         print('Buzz')
     else:
         print(number)
