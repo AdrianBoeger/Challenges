@@ -3,12 +3,22 @@
 # For numbers that are multiples of both 3 and 5, print "FizzBuzz."
 import math
 
-for number in range(1, 101):
-    if math.remainder(number, 3) == 0 and math.remainder(number, 5) == 0:
-        print('FizzBuzz')
-    elif math.remainder(number, 3) == 0:
-        print('Fizz')
-    elif math.remainder(number, 5) == 0:
-        print('Buzz')
+
+def fizzbuzz(number):
+    if math.remainder(number, 3) == 0.0 and math.remainder(number, 5) == 0.0:
+        return 'FizzBuzz'
+    elif math.remainder(number, 3) == 0.0:
+        return 'Fizz'
+    elif math.remainder(number, 5) == 0.0:
+        return 'Buzz'
     else:
-        print(number)
+        return number
+
+
+def main():
+    for number in range(1, 101):
+        print(fizzbuzz(number))
+
+
+if __name__ == '__main__':  # pragma: no cover
+    main()

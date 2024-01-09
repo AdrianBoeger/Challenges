@@ -113,6 +113,7 @@ def non_duplicates(matrix, dictionary):
                     except ValueError:
                         pass
 
+    # search for solutions which are only present once in a Box,Row or Column and update the matrix
     for box in dictionary:
         for position, possibility in dictionary[box].items():
             for poss in possibility:
